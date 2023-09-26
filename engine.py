@@ -21,10 +21,27 @@ class Engine:
                 self.trace = trace
                 self.log = log
                 self.jsprms = jsprms                                
-                self.root_app = os.getcwd()                
+                self.root_app = os.getcwd()
 
         @_error_decorator()
-        def test(self):
+        def get_mins_from_note(self):
                 self.trace(inspect.stack()[0])
-                print('test is k')
+                note = input('note : (c d e f g a b) : ')                
+                alteration = input('alteration : (n # b) : ')
+                code_mode = input('mode : (io dor ph lyd mx aeo loc) : ')
+                base = self.jsprms.prms['modes']['musical']
+                print(base)
+                cpt = 0
+               
+                for b in base:
+                        if b['code'] == code_mode:
+                                break
+                        cpt += 1
+                        if cpt == 7: 
+                                cpt = 0
+                print(cpt)
+                print(self.jsprms.prms['modes']['musical'][cpt]['mode'])
+                
+
+                 
         

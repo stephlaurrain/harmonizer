@@ -41,7 +41,7 @@ class Harmo:
 
             engine = Engine(self.trace, self.log, self.jsprms)
             if command == "test": 
-                engine.test()               
+                engine.get_mins_from_note()               
                 input("Waiting 4 k : ")           
             
         except KeyboardInterrupt:

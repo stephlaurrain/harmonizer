@@ -2,5 +2,16 @@
     "keep_log": {
         "time": 1,
         "unit": "m"
+    },
+    "modes" : {
+        "musical":[
+            { "note":"c", "code":"io", "mode":"Ionian","tone":"maj","semiton":2},
+            { "note":"d", "code":"dor","mode":"Dorian","tone":"min","semiton":2},
+            { "note":"e", "code":"ph", "mode":"Phrygian","tone":"min","semiton":1},
+            { "note":"f", "code":"lyd","mode": "Lydian","tone":"maj","semiton":2},
+            { "note":"g", "code":"mx","mode":"Mixolidian","tone":"maj","semiton":2},
+            { "note":"a", "code":"aeo","mode":"Aeolian","tone":"min","semiton":2},
+            { "note":"b", "code":"loc", "mode":"Locrian","tone":"dim","semiton":1}
+        ]
     }    
 }
