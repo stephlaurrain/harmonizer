@@ -44,6 +44,7 @@ while True:
 
     menulist = []
     menulist.append(Menuitem("modes", "modes", nb_params=0, ret=False))  
+    menulist.append(Menuitem("modeswithtones", "modeswithtones", nb_params=0, ret=False))      
     menulist.append(Menuitem("min", "min", nb_params=0, ret=True))  
 
     for idx, menuitem in enumerate(menulist):

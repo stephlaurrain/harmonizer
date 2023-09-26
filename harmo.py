@@ -45,10 +45,14 @@ class Harmo:
                 while True:
                     code_note = engine.get_note_input() 
                     code_mode = engine.get_mode_input()
-                    engine.get_modes_by(code_note, code_mode)                                   
-            if command == 'min':
+                    engine.get_modes_by(code_note, code_mode)  
+            if command == 'modeswithtones':                
                 code_note = engine.get_note_input()
-                # tone = input('tone (min, maj, none)')
+                code_mode = engine.get_mode_input()
+                tone = input('tone (min, maj, none)')                                
+                engine.get_modes_by(code_note, code_mode, tone)                
+            if command == 'min':
+                code_note = engine.get_note_input()                
                 tone = 'min'
                 engine.get_modes_by(code_note, 'aeo', tone)
                 engine.get_modes_by(code_note, 'dor', tone)
