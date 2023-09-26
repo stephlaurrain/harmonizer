@@ -43,8 +43,8 @@ while True:
     print(drkcol("What I can do for you :\n"))
 
     menulist = []
-    menulist.append(Menuitem("test", "test", nb_params=0, ret=False))  
-
+    menulist.append(Menuitem("modes", "modes", nb_params=0, ret=False))  
+    menulist.append(Menuitem("min", "min", nb_params=0, ret=True))  
 
     for idx, menuitem in enumerate(menulist):
         print (mencol(idx, menuitem.command, menuitem.label))

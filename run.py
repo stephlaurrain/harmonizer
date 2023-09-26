@@ -4,5 +4,5 @@ import gc
 from harmo import Harmo
 
 harmo = Harmo()
-harmo.main()
+harmo.main('go', 'default')
 

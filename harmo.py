@@ -35,14 +35,24 @@ class Harmo:
 
     def main(self, command="", jsonfile="", param1="", param2=""):
         try:
-            print(f"params=command={command}, jsonfile={jsonfile}, param1={param1}, param2={param2}")
+            # print(f"params=command={command}, jsonfile={jsonfile}, param1={param1}, param2={param2}")
             self.init_main(jsonfile)
             self.trace(inspect.stack()[0])
 
             engine = Engine(self.trace, self.log, self.jsprms)
-            if command == "test": 
-                engine.get_modes_by()               
-                # input("Waiting 4 k : ")           
+            
+            if command == 'modes':
+                while True:
+                    code_note = engine.get_note_input() 
+                    code_mode = engine.get_mode_input()
+                    engine.get_modes_by(code_note, code_mode)               
+                    # input("Waiting 4 k : ")
+            if command == 'min':
+                code_note = engine.get_note_input()
+                engine.get_modes_by(code_note, 'aeo')
+                engine.get_modes_by(code_note, 'dor')
+                engine.get_modes_by(code_note, 'ph')
+
             
         except KeyboardInterrupt:
             print("==Interrupted==")
@@ -52,6 +62,6 @@ class Harmo:
             self.log.errlg(e)
             
         finally:
-            print("do disconnect")
+            print("The end complete")
 
     
