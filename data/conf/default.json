@@ -3,15 +3,30 @@
         "time": 1,
         "unit": "m"
     },
+    "notes" : [
+            { "code":"c", "note":"c"},
+            { "code":"c#", "note":"c# db"},
+            { "code":"d", "note":"d"},
+            { "code":"d#", "note":"d# eb"},
+            { "code":"e", "note":"e"},
+            { "code":"f", "note":"f"},
+            { "code":"f#", "note":"f# gb"},
+            { "code":"g", "note":"g"},
+            { "code":"g#", "note":"g# ab"},
+            { "code":"a", "note":"a"},
+            { "code":"a#", "note":"a# bb"},
+            { "code":"b", "note":"b"}
+        ]
+    ,
     "modes" : {
         "musical":[
-            { "note":"c", "code":"io", "mode":"Ionian","tone":"maj","semiton":2},
-            { "note":"d", "code":"dor","mode":"Dorian","tone":"min","semiton":2},
-            { "note":"e", "code":"ph", "mode":"Phrygian","tone":"min","semiton":1},
-            { "note":"f", "code":"lyd","mode": "Lydian","tone":"maj","semiton":2},
-            { "note":"g", "code":"mx","mode":"Mixolidian","tone":"maj","semiton":2},
-            { "note":"a", "code":"aeo","mode":"Aeolian","tone":"min","semiton":2},
-            { "note":"b", "code":"loc", "mode":"Locrian","tone":"dim","semiton":1}
+            { "code":"io", "mode":"Ionian","tone":"maj","semiton":2},            
+            { "code":"dor","mode":"Dorian","tone":"min","semiton":2},
+            { "code":"ph", "mode":"Phrygian","tone":"min","semiton":1},
+            { "code":"lyd","mode": "Lydian","tone":"maj","semiton":2},
+            { "code":"mix","mode":"Mixolydian","tone":"maj","semiton":2},
+            { "code":"aeo","mode":"Aeolian","tone":"min","semiton":2},
+            { "code":"loc", "mode":"Locrian","tone":"dim","semiton":1}
         ]
     }    
 }

@@ -37,54 +37,53 @@ clear()
 
 harmo = Harmo()
 
-# while True:
-print(drkcol("\nHi Neo, I'm your harmonizer"))    
-print(drkcol("Your wish is my order\n"))
-print(drkcol("What I can do for you :\n"))
+while True:
+    print(drkcol("\nHi Neo, I'm your harmonizer"))    
+    print(drkcol("Your wish is my order\n"))
+    print(drkcol("What I can do for you :\n"))
 
-menulist = []
-menulist.append(Menuitem("test", "test", nb_params=0, ret=False))  
-
-
-for idx, menuitem in enumerate(menulist):
-    print (mencol(idx, menuitem.command, menuitem.label))
-    if menuitem.ret:
-        print(drkcol("#####"))
+    menulist = []
+    menulist.append(Menuitem("test", "test", nb_params=0, ret=False))  
 
 
-print(drkcol("#####"))
-print(mencol("93", "edit_params", "edit default.json"))        
-print(mencol("99", "exit", "exit this menu"))
+    for idx, menuitem in enumerate(menulist):
+        print (mencol(idx, menuitem.command, menuitem.label))
+        if menuitem.ret:
+            print(drkcol("#####"))
 
-dothat = input(drkcol("\n\nReady to play music : "))
 
-today = datetime.now()
-dnow = today.strftime(r"%y%m%d")
+    print(drkcol("#####"))
+    print(mencol("93", "edit_params", "edit default.json"))        
+    print(mencol("99", "exit", "exit this menu"))
 
-if dothat == "93":
-    print(drkcol("\edit params -r\n"))
-    os.system("nano data/conf/default.json")
-if dothat == "99":
-    print(drkcol("\nsee you soon, Neo\n"))
-    del bot
-    gc.collect
-    quit()
-try:
-    if int(dothat) < 50:
-        cmdstr = "nop"
+    dothat = input(drkcol("\n\nReady to play music : "))
 
-        item = menulist[int(dothat)]
-        cmd = item.command
-        print (cmd)
-        prms = int(item.nb_params)
-        prmcmdlist = []
-        for i in range(prms):
-            prmcmdlist.append(input(drkcol(f"enter param {i} :")))        
-        prm1 = "" if (len(prmcmdlist) < 1) else prmcmdlist[0]
-        prm2 = "" if (len(prmcmdlist) < 2) else prmcmdlist[1]
+    today = datetime.now()
+    dnow = today.strftime(r"%y%m%d")
 
-        harmo.main(cmd, jsonfile_from_arg, prm1, prm2)
+    if dothat == "93":
+        print(drkcol("\edit params -r\n"))
+        os.system("nano data/conf/default.json")
+    if dothat == "99":
+        print(drkcol("\nsee you soon, Neo\n"))
+        del harmo
+        gc.collect
+        quit()
+    try:
+        if int(dothat) < 50:
+            cmdstr = "nop"
+            item = menulist[int(dothat)]
+            cmd = item.command
+            print (cmd)
+            prms = int(item.nb_params)
+            prmcmdlist = []
+            for i in range(prms):
+                prmcmdlist.append(input(drkcol(f"enter param {i} :")))        
+            prm1 = "" if (len(prmcmdlist) < 1) else prmcmdlist[0]
+            prm2 = "" if (len(prmcmdlist) < 2) else prmcmdlist[1]
 
-except Exception as e:
-    print (e)
-    print(f"\n{hardgreen}bad command (something went wrong){normalcolor}\n")
+            harmo.main(cmd, jsonfile_from_arg, prm1, prm2)
+
+    except Exception as e:
+        print (e)
+        print(f"\n{hardgreen}bad command (something went wrong){normalcolor}\n")
