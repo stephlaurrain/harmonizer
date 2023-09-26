@@ -60,7 +60,7 @@ class Engine:
         
 
         @_error_decorator()
-        def get_modes_by(self, code_note, code_mode):
+        def get_modes_by(self, code_note, code_mode, tone='none'):
                 self.trace(inspect.stack()[0])
                 
                 idx_mode = self.get_mode_idx(code_mode)
@@ -69,7 +69,9 @@ class Engine:
                 idx_c = idx_note
                 for i in range(0, len(self.modes)):           
                         #print(f'@@@@@@@@@@@@@ idx_c={idx_c} idx={idx}')                                    
-                        print(f"{self.notes[idx_c]['code']} {self.modes[idx]['mode']}")
+                        if tone == 'none' or (tone in ['min', 'max'] and self.modes[idx]['tone'] == tone):
+                                print('#######################')
+                                print(f"{self.notes[idx_c]['code']} {self.modes[idx]['mode']}")
                         # print(modes[idx]['semiton'])
                         # print(notes[idx_c]['code'])
                         # pdb.set_trace()
@@ -77,9 +79,9 @@ class Engine:
                         # print(f'{idx_c} = idx_c')                        
                         if idx_c >= len(self.notes):
                                 idx_c-= len(self.notes)
-                                print(f'idx_c = {idx_c}')
+                                # print(f'idx_c = {idx_c}')
                         
-                        print('#######################')
+                        
                         # input()
                         idx+=1
                         if idx == len(self.modes):

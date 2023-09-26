@@ -45,13 +45,14 @@ class Harmo:
                 while True:
                     code_note = engine.get_note_input() 
                     code_mode = engine.get_mode_input()
-                    engine.get_modes_by(code_note, code_mode)               
-                    # input("Waiting 4 k : ")
+                    engine.get_modes_by(code_note, code_mode)                                   
             if command == 'min':
                 code_note = engine.get_note_input()
-                engine.get_modes_by(code_note, 'aeo')
-                engine.get_modes_by(code_note, 'dor')
-                engine.get_modes_by(code_note, 'ph')
+                # tone = input('tone (min, maj, none)')
+                tone = 'min'
+                engine.get_modes_by(code_note, 'aeo', tone)
+                engine.get_modes_by(code_note, 'dor', tone)
+                engine.get_modes_by(code_note, 'ph', tone)
 
             
         except KeyboardInterrupt:
